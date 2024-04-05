@@ -14,7 +14,12 @@ spring:
   cloud:
     gateway:
       mvc:
-        route[0]:
+        routes[0]:
           id: customerservice
           predicates[0]: Path=/api/v1/customers/**
           uri: lb://customerservice
+        routes[1]:
+          id: discoveryserver
+          predicates[0]: Path=/eureka/web
+          filters[0]: SetPath=/
+          uri: http://localhost:8888
