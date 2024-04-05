@@ -9,3 +9,12 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
     preferIpAddress: true
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        route[0]:
+          id: customerservice
+          predicates[0]: Path=/api/v1/customers/**
+          uri: lb://customerservice
