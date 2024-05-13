@@ -20,11 +20,11 @@ spring:
           uri: lb://customerservice
         routes[1]:
           id: individualCustomer
-          predicates[0]: Path=/customerservice/api/v1/individualCustomer/**
+          predicates[0]: Path=/customerservice/api/v1/individualCustomers/**
           uri: lb://customerservice
         routes[2]:
           id: searchservice
-          predicates[0]: Path=/searchservice/api/v1/searchCustomer/**
+          predicates[0]: Path=/searchservice/api/v1/searchCustomers/**
           uri: lb://searchservice
         routes[3]:
           id: discoveryserver
