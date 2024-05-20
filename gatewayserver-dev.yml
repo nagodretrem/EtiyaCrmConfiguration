@@ -23,10 +23,18 @@ spring:
           predicates[0]: Path=/customerservice/api/v1/individualCustomers/**
           uri: lb://customerservice
         routes[2]:
+          id: addres
+          predicates[0]: Path=/customerservice/api/v1/addresses/**
+          uri: lb://customerservice
+        routes[3]:
+          id: contactMedium
+          predicates[0]: Path=/customerservice/api/v1/contactMediums/**
+          uri: lb://customerservice
+        routes[4]:
           id: searchservice
           predicates[0]: Path=/searchservice/api/v1/searchCustomers/**
           uri: lb://searchservice
-        routes[3]:
+        routes[5]:
           id: discoveryserver
           predicates[0]: Path=/eureka/web
           filters[0]: SetPath=/
